@@ -16,7 +16,7 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/").then((resp) => {
     grid.innerHTML = cardStr;
     const cards = document.querySelectorAll(".col");
     clickOverview(cards, arrayPictures);
-    form.addEventListener("submit", (event) => {
+    form.addEventListener("keyup", (event) => {
         event.preventDefault();
         const filter = document.getElementById("filtro").value;
         let cardStr = createStringFilter(arrayPictures, filter);
