@@ -9,6 +9,18 @@ img {
     max-width: 100%;
 }
 
+
+/* ANIMATIONS */
+@keyframes loading {
+     from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(1080deg);
+  }
+}
+
+
 /* CONTAINER */
 .container {
     max-width: 95%;
@@ -71,6 +83,11 @@ main {
     padding-top: 30px;
     padding-bottom: 30px;
 
+}
+
+#spinner{
+    animation-name: loading;
+    animation-duration: 15s;
 }
 
 .col {

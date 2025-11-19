@@ -7,16 +7,16 @@ const imgOverview = document.querySelector(".img-overview");
 const button = document.querySelector("button");
 let gradi = 0;
 
-const spinnerInterval = setInterval(() => {
-    spinner.style.transform = `rotate(${gradi}deg)`;
-    gradi += 10;
-    if (gradi === 360) {
-        gradi = 0;
-    }
-}, 100)
+// const spinnerInterval = setInterval(() => {
+//     spinner.style.transform = `rotate(${gradi}deg)`;
+//     gradi += 10;
+//     if (gradi === 360) {
+//         gradi = 0;
+//     }
+// }, 100)
 
 axios.get("https://lanciweb.github.io/demo/api/pictures/").then((resp) => {
-    clearInterval(spinnerInterval);
+    // clearInterval(spinnerInterval);
     divSpinner.style.display = "none";
     const arrayPictures = resp.data;
     let cardStr = createString(arrayPictures);
