@@ -25,6 +25,14 @@
         <h1 class="sometype-mono-sm fs-4rem"><em>ESTATE 24</em></h1>
     </header>
     <main>
+        <form class="filter">
+            <label for="filtro">FILTRA PER NOME</label>
+            <div class="input">
+                <button class="button reset" type="reset" id="reset">RESET</button>
+                <input type="text" id="filtro" placeholder="Scrivi per filtrare...">
+                <button class="button cerca" type="submit" id="cerca" auto>CERCA</button>
+            </div>
+        </form>
         <div class="spinner-div">
             <i id="spinner" class="fa-solid fa-spinner fa-5x"></i>
         </div>
@@ -32,11 +40,12 @@
             <div id="grid" class="row">
             </div>
         </div>
+
     </main>
     <div class="overview">
         <div class="">
             <button>CHIUDI</button>
-            <img class="img-overview" src="./img/1.webp"  alt="">
+            <img class="img-overview" src="./img/1.webp" alt="">
         </div>
     </div>
 

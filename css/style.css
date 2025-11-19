@@ -16,7 +16,7 @@ img {
     transform: rotate(0deg);
   }
   to {
-    transform: rotate(1080deg);
+    transform: rotate(360deg);
   }
 }
 
@@ -80,7 +80,6 @@ main {
     background-image: url(../img/cork.png);
     min-height: 100vh;
     background-size: contain;
-    padding-top: 30px;
     padding-bottom: 30px;
 
 }
@@ -88,6 +87,7 @@ main {
 #spinner{
     animation-name: loading;
     animation-duration: 15s;
+    animation-iteration-count: infinite;
 }
 
 .col {
@@ -161,6 +161,47 @@ main {
     border-radius: 20px;
     cursor: pointer;
 }
+
+.filter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    background-color: #e79e69;
+    margin-bottom: 50px;
+}
+
+label{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2rem;
+    font-weight: 700;
+    color: black;
+}
+
+#filtro{
+    border-radius: 10px;
+    height: 40px;
+    padding: 5px;
+    border: 2px solid gray;
+    font-family: sans-serif;
+    font-size: 1.3rem;
+}
+
+.button{
+    border-radius: 10px;
+    padding: 5px 20px;
+    height: 40px;
+    background-color: white;
+    font-weight: 700;
+    border: 2px solid gray;
+}
+.reset{
+    background-color: yellow;
+}
+.cerca{
+    background-color: rgb(0, 200, 30);
+}
+
 
 /* HOVER */
 
