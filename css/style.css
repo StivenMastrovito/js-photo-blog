@@ -79,6 +79,7 @@ main {
     position: relative;
     padding: 10px;
     margin-bottom: 30px;
+    cursor: pointer;
 }
 
 .row {
@@ -111,10 +112,47 @@ main {
     font-weight: 800;
 }
 
+.overview{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+
+    display: none;
+}
+
+.overview > div{
+    position: fixed;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    width: 30%;
+}
+
+.overview button{
+    font-size: 2rem;
+    background-color: red;
+    color: white;
+    position: fixed;
+    top: -70px;
+    right: 50%;
+    transform: translate(50%, 0);
+    border: 2px solid black;
+    padding: 5px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
 /* HOVER */
 
-.col:hover {
-    transform: rotate(10deg);
+.col:hover{
+    box-shadow: 0px 30px 20px rgba(0, 0, 0, 0.7);
+    transform: scale(1.1) rotate(10deg);
+}
+
+.col:hover img{
 }
 
 .col:hover #pin {
@@ -128,3 +166,4 @@ main {
 #spinner{
     transform: rotate(10deg);
 }
+

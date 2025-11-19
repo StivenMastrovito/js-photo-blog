@@ -2,13 +2,15 @@
 const grid = document.getElementById("grid");
 const spinner = document.querySelector(".fa-spinner");
 const divSpinner = document.querySelector(".spinner-div");
+const overview = document.querySelector(".overview");
+const imgOverview = document.querySelector(".img-overview");
+const button = document.querySelector("button");
 let gradi = 0;
-console.log(spinner);
 
-const spinnerInterval = setInterval(()=>{
-    spinner.style.transform = `rotate(${gradi}deg)`; 
+const spinnerInterval = setInterval(() => {
+    spinner.style.transform = `rotate(${gradi}deg)`;
     gradi += 10;
-    if(gradi === 360){
+    if (gradi === 360) {
         gradi = 0;
     }
 }, 100)
@@ -19,17 +21,26 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/").then((resp) => {
     const arrayPictures = resp.data;
     let cardStr = createString(arrayPictures);
     grid.innerHTML = cardStr;
+    const cards = document.querySelectorAll(".col");
+    clickOverview(cards, arrayPictures);
+})
+
+button.addEventListener("click",()=>{
+    overview.style.display = "none";
+})
+overview.addEventListener("click",()=>{
+    overview.style.display = "none";
 })
 
 
 
 
 
-function createString(array){
+function createString(array) {
     let str = "";
-    array.forEach(({ title, date, url }) => {
+    array.forEach(({ title, date, url, id }) => {
         str += `
-            <div class="col">
+            <div class="col" data-postid = ${id}>
                 <img src="${url}" alt="">
                 <img id="pin" src="./img/pin.svg" alt="">
                 <div class="text">
@@ -40,4 +51,15 @@ function createString(array){
         `
     });
     return str;
+}
+
+function clickOverview(card, arrayPictures) {
+    card.forEach((element) => {
+        element.addEventListener("click", () => {
+            const clickedCard = parseInt(element.dataset.postid);
+            const clickedPost = arrayPictures.find((picture) => clickedCard === picture.id)
+            imgOverview.src = `${clickedPost.url}`
+            overview.style.display = "block";
+        })
+    })
 }
